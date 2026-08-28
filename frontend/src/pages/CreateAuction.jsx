@@ -36,9 +36,15 @@ function CreateAuction() {
                 }
             );
 
-            setAuction(
-                response.data.auction
+            const createdAuction =
+                response.data.auction;
+
+            localStorage.setItem(
+                "auctionId",
+                createdAuction.auctionId
             );
+
+            setAuction(createdAuction);
 
         } catch (error) {
             setMessage(
@@ -66,7 +72,7 @@ function CreateAuction() {
                     </h1>
 
                     <p className="created-subtitle">
-                        Your auction is ready to go.
+                        You are now the admin of this auction.
                     </p>
 
                     <h2>

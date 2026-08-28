@@ -30,22 +30,31 @@ function AdminDashboard() {
         }
 
         try {
+            setMessage("");
+
             const response = await api.get(
                 `/auction/details/${auctionId.trim()}`,
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`
+                        Authorization:
+                            `Bearer ${token}`
                     }
                 }
             );
 
-            setAuction(response.data.auction);
+            const loadedAuction =
+                response.data.auction;
+
+            setAuction(loadedAuction);
             setCurrentPlayer(
-                response.data.auction.currentPlayer
+                loadedAuction.currentPlayer
             );
 
         } catch (error) {
             console.log(error);
+
+            setAuction(null);
+            setCurrentPlayer(null);
 
             setMessage(
                 error.response?.data?.message ||
@@ -90,10 +99,13 @@ function AdminDashboard() {
             const response = await api.post(
                 "/auction/next-player",
                 {
-                    auctionId: auctionId.trim(),
-                    name: name.trim(),
+                    auctionId:
+                        auctionId.trim(),
+                    name:
+                        name.trim(),
                     category,
-                    basePrice: Number(basePrice)
+                    basePrice:
+                        Number(basePrice)
                 },
                 {
                     headers: {
@@ -237,11 +249,13 @@ function AdminDashboard() {
                 response.data.auction
             );
 
+            setCurrentPlayer(
+                response.data.auction.currentPlayer
+            );
+
             setMessage(
                 "🏁 Auction finished successfully"
             );
-
-            await loadAuction();
 
         } catch (error) {
             console.log(error);
@@ -534,12 +548,11 @@ function AdminDashboard() {
                     </h1>
 
                     <h2>
-                        Admin Dashboard
+                        Auction Admin Dashboard
                     </h2>
 
                     <p>
-                        Manage your auction and control
-                        every player sale.
+                        You are the admin of the selected auction.
                     </p>
 
                 </div>
@@ -547,6 +560,7 @@ function AdminDashboard() {
                 <div className="auction-id-section">
 
                     <div className="section-heading">
+
                         <span>
                             🔑
                         </span>
@@ -557,9 +571,10 @@ function AdminDashboard() {
                             </h2>
 
                             <p>
-                                Load your auction dashboard
+                                Load an auction you created
                             </p>
                         </div>
+
                     </div>
 
                     <input
@@ -572,11 +587,14 @@ function AdminDashboard() {
                     />
 
                     <p className="current-auction">
+
                         Current Auction:{" "}
+
                         <strong>
                             {auctionId ||
                                 "Not selected"}
                         </strong>
+
                     </p>
 
                 </div>
@@ -606,6 +624,7 @@ function AdminDashboard() {
                         <div className="auction-info-grid">
 
                             <div className="info-card">
+
                                 <span>
                                     AUCTION NAME
                                 </span>
@@ -613,9 +632,11 @@ function AdminDashboard() {
                                 <strong>
                                     {auction.name}
                                 </strong>
+
                             </div>
 
                             <div className="info-card">
+
                                 <span>
                                     TEAMS
                                 </span>
@@ -625,9 +646,11 @@ function AdminDashboard() {
                                     {" / "}
                                     {auction.teamsCount}
                                 </strong>
+
                             </div>
 
                             <div className="info-card">
+
                                 <span>
                                     MAXIMUM PURSE
                                 </span>
@@ -640,9 +663,11 @@ function AdminDashboard() {
                                     ).toFixed(2)}
                                     Cr
                                 </strong>
+
                             </div>
 
                             <div className="info-card">
+
                                 <span>
                                     STATUS
                                 </span>
@@ -650,6 +675,7 @@ function AdminDashboard() {
                                 <strong>
                                     {auction.auctionStatus}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -666,6 +692,7 @@ function AdminDashboard() {
                         </span>
 
                         <div>
+
                             <h2>
                                 Add Next Player
                             </h2>
@@ -673,6 +700,7 @@ function AdminDashboard() {
                             <p>
                                 Put the next player up for auction
                             </p>
+
                         </div>
 
                     </div>
@@ -761,7 +789,11 @@ function AdminDashboard() {
                         <button
                             className="add-player-button"
                             type="submit"
-                            disabled={loading}
+                            disabled={
+                                loading ||
+                                !auction ||
+                                auction.auctionStatus === "Finished"
+                            }
                         >
                             {loading
                                 ? "ADDING..."
@@ -781,6 +813,7 @@ function AdminDashboard() {
                         </span>
 
                         <div>
+
                             <h2>
                                 Current Player
                             </h2>
@@ -788,6 +821,7 @@ function AdminDashboard() {
                             <p>
                                 Player currently on the auction block
                             </p>
+
                         </div>
 
                     </div>
@@ -797,13 +831,16 @@ function AdminDashboard() {
                         <>
 
                             <div className="player-name">
+
                                 🏏{" "}
                                 {currentPlayer.name}
+
                             </div>
 
                             <div className="admin-player-info">
 
                                 <div>
+
                                     <span>
                                         CATEGORY
                                     </span>
@@ -813,24 +850,30 @@ function AdminDashboard() {
                                             currentPlayer.category
                                         }
                                     </strong>
+
                                 </div>
 
                                 <div>
+
                                     <span>
                                         BASE PRICE
                                     </span>
 
                                     <strong>
+
                                         ₹
                                         {(
                                             currentPlayer.basePrice /
                                             100000
                                         ).toFixed(2)}
                                         Lakhs
+
                                     </strong>
+
                                 </div>
 
                                 <div>
+
                                     <span>
                                         STATUS
                                     </span>
@@ -840,6 +883,7 @@ function AdminDashboard() {
                                             currentPlayer.status
                                         }
                                     </strong>
+
                                 </div>
 
                             </div>
@@ -866,6 +910,7 @@ function AdminDashboard() {
                     ) : (
 
                         <div className="no-current-player">
+
                             <span>
                                 ⏳
                             </span>
@@ -877,6 +922,7 @@ function AdminDashboard() {
                             <small>
                                 Add a player above to start the auction.
                             </small>
+
                         </div>
 
                     )}
@@ -892,6 +938,7 @@ function AdminDashboard() {
                         </span>
 
                         <div>
+
                             <h2>
                                 Auction Control
                             </h2>
@@ -899,6 +946,7 @@ function AdminDashboard() {
                             <p>
                                 Manage the auction status
                             </p>
+
                         </div>
 
                     </div>
@@ -912,7 +960,8 @@ function AdminDashboard() {
                                 finishAuction
                             }
                             disabled={
-                                actionLoading
+                                actionLoading ||
+                                !auction
                             }
                         >
                             🏁 FINISH AUCTION
@@ -950,6 +999,7 @@ function AdminDashboard() {
                         </span>
 
                         <div>
+
                             <h2>
                                 Teams
                             </h2>
@@ -957,6 +1007,7 @@ function AdminDashboard() {
                             <p>
                                 Teams participating in this auction
                             </p>
+
                         </div>
 
                     </div>
@@ -964,6 +1015,7 @@ function AdminDashboard() {
                     {!auction ? (
 
                         <div className="empty-section">
+
                             <span>
                                 🔑
                             </span>
@@ -971,12 +1023,14 @@ function AdminDashboard() {
                             <p>
                                 Enter an Auction ID to load teams.
                             </p>
+
                         </div>
 
                     ) : auction.teams.length ===
                         0 ? (
 
                         <div className="empty-section">
+
                             <span>
                                 👥
                             </span>
@@ -984,6 +1038,7 @@ function AdminDashboard() {
                             <p>
                                 No captains have joined yet.
                             </p>
+
                         </div>
 
                     ) : (
@@ -1004,6 +1059,7 @@ function AdminDashboard() {
                                         <div className="team-card-header">
 
                                             <div>
+
                                                 <span className="team-number">
                                                     TEAM {ind + 1}
                                                 </span>
@@ -1012,6 +1068,7 @@ function AdminDashboard() {
                                                     🏏{" "}
                                                     {team.teamName}
                                                 </h3>
+
                                             </div>
 
                                         </div>
@@ -1019,6 +1076,7 @@ function AdminDashboard() {
                                         <div className="team-stats">
 
                                             <div>
+
                                                 <span>
                                                     REMAINING PURSE
                                                 </span>
@@ -1031,9 +1089,11 @@ function AdminDashboard() {
                                                     ).toFixed(2)}
                                                     Cr
                                                 </strong>
+
                                             </div>
 
                                             <div>
+
                                                 <span>
                                                     PLAYERS
                                                 </span>
@@ -1044,6 +1104,7 @@ function AdminDashboard() {
                                                         0
                                                     }
                                                 </strong>
+
                                             </div>
 
                                         </div>
@@ -1074,6 +1135,7 @@ function AdminDashboard() {
                                                         >
 
                                                             <div>
+
                                                                 <strong>
                                                                     🏏{" "}
                                                                     {
@@ -1086,15 +1148,18 @@ function AdminDashboard() {
                                                                         player.category
                                                                     }
                                                                 </span>
+
                                                             </div>
 
                                                             <strong className="team-player-cost">
+
                                                                 ₹
                                                                 {(
                                                                     player.cost /
                                                                     100000
                                                                 ).toFixed(2)}
                                                                 L
+
                                                             </strong>
 
                                                         </div>
@@ -1107,10 +1172,12 @@ function AdminDashboard() {
                                         )}
 
                                     </div>
+
                                 )
                             )}
 
                         </div>
+
                     )}
 
                 </div>
