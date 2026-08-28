@@ -18,9 +18,6 @@ const {
 const protect =
     require("../middleware/authMiddleware");
 
-const adminOnly =
-    require("../middleware/adminMiddleware");
-
 const router = express.Router();
 
 router.post(
@@ -56,35 +53,30 @@ router.get(
 router.get(
     "/details/:auctionId",
     protect,
-    adminOnly,
     getAuctionDetails
 );
 
 router.post(
     "/next-player",
     protect,
-    adminOnly,
     createNextPlayer
 );
 
 router.post(
     "/current-player",
     protect,
-    adminOnly,
     setCurrentPlayer
 );
 
 router.post(
     "/unsold",
     protect,
-    adminOnly,
     markPlayerUnsold
 );
 
 router.post(
     "/finish",
     protect,
-    adminOnly,
     finishAuction
 );
 
