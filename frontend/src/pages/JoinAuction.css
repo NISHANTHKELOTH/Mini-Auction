@@ -1,0 +1,292 @@
+.join-auction-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(34, 197, 94, 0.2),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 90%,
+            rgba(22, 163, 74, 0.18),
+            transparent 35%
+        ),
+        #07130d;
+}
+
+.join-auction-card {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: rgba(15, 35, 23, 0.74);
+
+    border: 1px solid rgba(74, 222, 128, 0.25);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 60px rgba(34, 197, 94, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.join-logo {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(34, 197, 94, 0.13);
+
+    border: 1px solid rgba(74, 222, 128, 0.3);
+
+    font-size: 38px;
+
+    box-shadow:
+        0 0 30px rgba(34, 197, 94, 0.12);
+}
+
+.join-auction-card h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.join-subtitle {
+    margin: 10px auto 30px;
+
+    max-width: 390px;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.join-form-group {
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+.join-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.join-form-group input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border-radius: 11px;
+
+    border: 1px solid #33483a;
+
+    background: rgba(5, 15, 9, 0.8);
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.join-form-group input::placeholder {
+    color: #6b7280;
+}
+
+.join-form-group input:focus {
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.input-hint {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.join-submit-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.join-submit-button:hover {
+    background: #22c55e;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 25px rgba(34, 197, 94, 0.18);
+}
+
+.join-message {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(127, 29, 29, 0.35);
+
+    border: 1px solid rgba(248, 113, 113, 0.25);
+
+    color: #fecaca;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.join-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 28px 0 20px;
+
+    background: rgba(74, 222, 128, 0.13);
+}
+
+.join-back-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    border: 1px solid rgba(74, 222, 128, 0.25);
+
+    color: #86efac;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.join-back-button:hover {
+    background: rgba(34, 197, 94, 0.1);
+
+    border-color: #22c55e;
+
+    transform: translateY(-1px);
+}
+
+.join-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+.join-glow-one {
+    top: -150px;
+    left: -120px;
+}
+
+.join-glow-two {
+    bottom: -150px;
+    right: -120px;
+}
+
+@media (max-width: 550px) {
+
+    .join-auction-page {
+        padding: 15px;
+    }
+
+    .join-auction-card {
+        padding: 30px 20px;
+
+        border-radius: 21px;
+    }
+
+    .join-logo {
+        width: 70px;
+        height: 70px;
+
+        font-size: 34px;
+    }
+
+    .join-auction-card h1 {
+        font-size: 28px;
+    }
+
+    .join-subtitle {
+        font-size: 13px;
+    }
+}

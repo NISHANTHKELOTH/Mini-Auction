@@ -1,0 +1,774 @@
+.admin-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding: 35px 20px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 10% 5%,
+            rgba(34, 197, 94, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(22, 163, 74, 0.16),
+            transparent 30%
+        ),
+        #07130d;
+}
+
+.admin-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(34, 197, 94, 0.12);
+
+    border: 1px solid rgba(74, 222, 128, 0.3);
+
+    font-size: 35px;
+
+    box-shadow:
+        0 0 35px rgba(34, 197, 94, 0.1);
+}
+
+.admin-header h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.admin-header h2 {
+    margin: 8px 0;
+
+    color: #86efac;
+
+    font-size: 22px;
+}
+
+.admin-header p {
+    margin: 0;
+
+    color: #89958d;
+
+    font-size: 14px;
+}
+
+.auction-id-section,
+.auction-info,
+.player-form,
+.current-player,
+.auction-control,
+.teams-section {
+    margin-bottom: 24px;
+
+    padding: 25px;
+
+    background: rgba(15, 35, 23, 0.72);
+
+    border: 1px solid rgba(74, 222, 128, 0.2);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+.section-heading > span {
+    font-size: 27px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.section-heading p {
+    margin: 3px 0 0;
+
+    color: #89958d;
+
+    font-size: 12px;
+}
+
+.auction-id-section input,
+.admin-page input,
+.admin-page select {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #33483a;
+
+    border-radius: 10px;
+
+    background: rgba(5, 15, 9, 0.8);
+
+    color: #ffffff;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.auction-id-section input {
+    max-width: 600px;
+}
+
+.admin-page input:focus,
+.admin-page select:focus {
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.admin-page input::placeholder {
+    color: #6b7280;
+}
+
+.current-auction {
+    margin: 12px 0 0;
+
+    color: #89958d;
+
+    font-size: 13px;
+}
+
+.current-auction strong {
+    color: #86efac;
+}
+
+.auction-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.info-card {
+    padding: 18px;
+
+    border-radius: 13px;
+
+    background: rgba(5, 20, 11, 0.5);
+
+    border: 1px solid rgba(74, 222, 128, 0.13);
+
+    transition: 0.2s;
+}
+
+.info-card:hover {
+    border-color: rgba(74, 222, 128, 0.4);
+
+    transform: translateY(-2px);
+}
+
+.info-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #89958d;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+.info-card strong {
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.add-player-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 13px 20px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.add-player-button:hover {
+    background: #22c55e;
+
+    transform: translateY(-1px);
+}
+
+.add-player-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.current-player {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 35, 23, 0.78),
+            rgba(10, 45, 25, 0.72)
+        );
+
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.center-heading {
+    justify-content: center;
+}
+
+.player-name {
+    margin: 15px 0 25px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+}
+
+.admin-player-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    max-width: 800px;
+
+    margin: 0 auto 22px;
+}
+
+.admin-player-info > div {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(5, 20, 11, 0.45);
+
+    border: 1px solid rgba(74, 222, 128, 0.12);
+}
+
+.admin-player-info span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #89958d;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.admin-player-info strong {
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+.player-status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(22, 101, 52, 0.6);
+
+    color: #bbf7d0 !important;
+
+    font-size: 12px !important;
+}
+
+.unsold-button {
+    width: 220px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.unsold-button:hover {
+    background: #ef4444;
+
+    transform: translateY(-1px);
+}
+
+.unsold-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+.no-current-player {
+    padding: 25px;
+
+    border-radius: 13px;
+
+    background: rgba(5, 20, 11, 0.4);
+}
+
+.no-current-player span {
+    font-size: 32px;
+}
+
+.no-current-player p {
+    margin: 8px 0 4px;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+.no-current-player small {
+    color: #6b7280;
+}
+
+.auction-control {
+    text-align: center;
+}
+
+.auction-control .section-heading {
+    margin-bottom: 22px;
+}
+
+.finish-button,
+.pdf-button {
+    display: block;
+
+    width: 220px;
+
+    margin: 10px auto;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.finish-button {
+    background: #16a34a;
+}
+
+.finish-button:hover {
+    background: #22c55e;
+
+    transform: translateY(-1px);
+}
+
+.pdf-button {
+    background: #15803d;
+}
+
+.pdf-button:hover {
+    background: #16a34a;
+
+    transform: translateY(-1px);
+}
+
+.finish-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.finished-message {
+    margin: 5px auto 15px;
+
+    color: #86efac;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.teams-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.team-card {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(5, 20, 11, 0.5);
+
+    border: 1px solid rgba(74, 222, 128, 0.14);
+
+    transition: 0.2s;
+}
+
+.team-card:hover {
+    border-color: rgba(74, 222, 128, 0.4);
+
+    transform: translateY(-3px);
+}
+
+.team-number {
+    color: #4ade80;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.team-card h3 {
+    margin: 5px 0 0;
+
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+.team-stats {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin: 17px 0;
+}
+
+.team-stats > div {
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: rgba(15, 35, 23, 0.7);
+}
+
+.team-stats span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #89958d;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.team-stats strong {
+    color: #facc15;
+
+    font-size: 15px;
+}
+
+.team-stats > div:last-child strong {
+    color: #ffffff;
+}
+
+.team-players {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.team-player {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(15, 35, 23, 0.7);
+
+    border-left: 3px solid #16a34a;
+}
+
+.team-player div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.team-player strong {
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.team-player span {
+    color: #89958d;
+
+    font-size: 10px;
+}
+
+.team-player .team-player-cost {
+    color: #facc15;
+
+    white-space: nowrap;
+}
+
+.no-team-players {
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: rgba(15, 35, 23, 0.5);
+
+    color: #6b7280;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+.empty-section {
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 13px;
+
+    background: rgba(5, 20, 11, 0.4);
+
+    border: 1px dashed rgba(74, 222, 128, 0.16);
+}
+
+.empty-section span {
+    font-size: 32px;
+}
+
+.empty-section p {
+    margin: 8px 0 0;
+
+    color: #89958d;
+}
+
+.message {
+    max-width: 700px;
+
+    margin: 0 auto 20px;
+
+    padding: 14px 18px;
+
+    border-radius: 11px;
+
+    background: rgba(15, 35, 23, 0.8);
+
+    border: 1px solid rgba(74, 222, 128, 0.2);
+
+    color: #d1fae5;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.auto-update {
+    margin: 25px 0 18px;
+
+    color: #6b7280;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+.back-button {
+    display: block;
+
+    width: 220px;
+
+    margin: auto;
+
+    border: 1px solid rgba(156, 163, 175, 0.2);
+
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    background: rgba(55, 65, 81, 0.5);
+
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.back-button:hover {
+    background: rgba(75, 85, 99, 0.6);
+
+    transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+
+    .auction-info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .admin-page {
+        padding: 20px 12px;
+    }
+
+    .auction-id-section,
+    .auction-info,
+    .player-form,
+    .current-player,
+    .auction-control,
+    .teams-section {
+        padding: 20px;
+    }
+
+    .admin-header h1 {
+        font-size: 30px;
+    }
+
+    .auction-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-player-info {
+        grid-template-columns: 1fr;
+    }
+
+    .player-name {
+        font-size: 27px;
+    }
+
+    .team-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .finish-button,
+    .pdf-button,
+    .unsold-button,
+    .back-button {
+        width: 220px;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,1111 @@
+/* =========================================
+   MINI AUCTION APP
+   ========================================= */
+
+.app-page {
+    min-height: 100vh;
+    background: #0f1117;
+    color: #f5f5f5;
+}
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.page-header p {
+    margin-top: 10px;
+    color: #9ca3af;
+}
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.card {
+    background: #181b24;
+    border: 1px solid #2b2f3a;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* =========================================
+   GRID
+   ========================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #d1d5db;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #353a47;
+    background: #11141b;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #7c3aed;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #8b5cf6;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   DANGER BUTTON
+   ========================================= */
+
+.danger-button {
+    background: #dc2626;
+}
+
+.danger-button:hover {
+    background: #ef4444;
+}
+
+/* =========================================
+   SUCCESS BUTTON
+   ========================================= */
+
+.success-button {
+    background: #059669;
+}
+
+.success-button:hover {
+    background: #10b981;
+}
+
+/* =========================================
+   AUCTION PLAYER
+   ========================================= */
+
+.current-player {
+    text-align: center;
+    padding: 35px;
+    background: linear-gradient(
+        135deg,
+        #1e1b4b,
+        #181b24
+    );
+    border: 1px solid #4c1d95;
+    border-radius: 15px;
+}
+
+.current-player h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.current-player .player-name {
+    font-size: 38px;
+    font-weight: 800;
+    color: #c4b5fd;
+}
+
+/* =========================================
+   PURSE
+   ========================================= */
+
+.purse {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* =========================================
+   PLAYER LIST
+   ========================================= */
+
+.player-list {
+    display: grid;
+    gap: 12px;
+}
+
+.player-card {
+    background: #13161e;
+    border: 1px solid #292e39;
+    border-radius: 10px;
+    padding: 18px;
+    transition: 0.2s;
+}
+
+.player-card:hover {
+    border-color: #6d28d9;
+    transform: translateY(-2px);
+}
+
+.player-card h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+}
+
+.player-card p {
+    margin: 5px 0;
+}
+
+/* =========================================
+   TEAM CARD
+   ========================================= */
+
+.team-card {
+    background: #181b24;
+    border: 1px solid #2b2f3a;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.team-header h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-available {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.status-sold {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+.status-unsold {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+}
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.message {
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+    margin: 15px 0;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.back-button {
+    background: #374151;
+}
+
+.back-button:hover {
+    background: #4b5563;
+}
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+
+hr {
+    border: none;
+    border-top: 1px solid #292e39;
+    margin: 30px 0;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+    .page-container {
+        padding: 25px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .current-player .player-name {
+        font-size: 28px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+.secondary {
+    background: #374151;
+}
+
+.secondary:hover {
+    background: #4b5563;
+}
+
+.danger {
+    background: #dc2626;
+}
+
+.danger:hover {
+    background: #ef4444;
+}
+
+.welcome-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: #0f1117;
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    background: #181b24;
+    border: 1px solid #2b2f3a;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-card h1 {
+    margin: 0 0 15px;
+    font-size: 42px;
+    color: #ffffff;
+}
+
+.welcome-card h2 {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.welcome-card h3 {
+    margin: 20px 0 15px;
+    font-size: 20px;
+}
+
+.welcome-card p {
+    margin-bottom: 25px;
+    color: #aeb4c2;
+}
+
+.welcome-card button {
+    min-width: 190px;
+    margin: 6px;
+}
+
+.welcome-card hr {
+    border: none;
+    border-top: 1px solid #2b2f3a;
+    margin: 30px 0;
+}
+
+.welcome-card .secondary {
+    background: #374151;
+}
+
+.welcome-card .secondary:hover {
+    background: #4b5563;
+}
+
+.welcome-card .danger {
+    background: #dc2626;
+}
+
+.welcome-card .danger:hover {
+    background: #ef4444;
+}
+
+@media (max-width: 600px) {
+    .welcome-card {
+        padding: 25px 18px;
+    }
+
+    .welcome-card h1 {
+        font-size: 32px;
+    }
+
+    .welcome-card button {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
+.create-auction-card {
+    max-width: 600px;
+}
+
+.create-auction-card form {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.create-auction-card button {
+    margin-top: 10px;
+}
+
+.auction-created {
+    max-width: 650px;
+}
+
+.auction-id-box {
+    margin: 25px 0;
+    padding: 25px;
+    background: #11141b;
+    border: 1px solid #7c3aed;
+    border-radius: 12px;
+}
+
+.auction-id-box p {
+    margin: 5px 0;
+}
+
+.auction-id-box h2 {
+    margin: 12px 0;
+    font-size: 32px;
+    color: #c4b5fd;
+    letter-spacing: 2px;
+}
+
+.auction-details {
+    margin: 25px 0;
+    padding: 15px;
+    background: #13161e;
+    border-radius: 10px;
+}
+
+.auction-details p {
+    margin: 12px 0;
+}
+
+.auction-details strong {
+    color: #34d399;
+}
+
+.create-auction-card .secondary,
+.auction-created .secondary {
+    background: #374151;
+}
+
+.create-auction-card .secondary:hover,
+.auction-created .secondary:hover {
+    background: #4b5563;
+}
+
+.join-auction-card {
+    max-width: 550px;
+}
+
+.join-auction-card form {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.join-auction-card form button {
+    display: block;
+    width: 100%;
+    margin: 25px 0 0;
+}
+
+.join-auction-card .secondary {
+    background: #374151;
+}
+
+.join-auction-card .secondary:hover {
+    background: #4b5563;
+}
+
+.dashboard-page {
+    min-height: 100vh;
+    background: #0f1117;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    font-size: 20px;
+    color: #aeb4c2;
+}
+
+.card {
+    background: #171a22;
+    border: 1px solid #2a2f3a;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.auction-loader {
+    max-width: 550px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.auction-loader h2 {
+    margin-bottom: 25px;
+}
+
+.auction-loader input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #3a4050;
+    background: #0f1117;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.auction-loader button,
+.bid-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.auction-loader button:hover,
+.bid-form button:hover {
+    background: #8b5cf6;
+}
+
+.team-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.label {
+    color: #8b5cf6;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.team-summary h2 {
+    margin-top: 8px;
+}
+
+.purse-box {
+    text-align: right;
+}
+
+.purse-box span {
+    display: block;
+    color: #aeb4c2;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.purse-box strong {
+    font-size: 25px;
+    color: #4ade80;
+}
+
+.current-player {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin: 0;
+}
+
+.live-badge {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.player-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    align-items: center;
+}
+
+.player-info h1 {
+    font-size: 40px;
+    margin: 0 0 20px;
+}
+
+.player-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.player-details span {
+    background: #222631;
+    border: 1px solid #303644;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #c4c9d4;
+}
+
+.bid-form {
+    background: #10131a;
+    border: 1px solid #303644;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.bid-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #c4c9d4;
+}
+
+.bid-form input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    border-radius: 9px;
+    border: 1px solid #3a4050;
+    background: #171a22;
+    color: white;
+    font-size: 16px;
+}
+
+.status {
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.status.sold {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+}
+
+.status.unsold {
+    background: rgba(234, 179, 8, 0.12);
+    color: #facc15;
+}
+
+.waiting {
+    padding: 30px;
+    text-align: center;
+    background: #10131a;
+    border-radius: 12px;
+    color: #aeb4c2;
+}
+
+.player-count {
+    background: #252a36;
+    padding: 7px 12px;
+    border-radius: 20px;
+    color: #c4c9d4;
+    font-size: 13px;
+}
+
+.players-section {
+    margin-top: 30px;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.player-card {
+    background: #171a22;
+    border: 1px solid #2a2f3a;
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.player-card:hover {
+    transform: translateY(-3px);
+    border-color: #7c3aed;
+}
+
+.player-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: start;
+}
+
+.player-card-top h3 {
+    margin: 0;
+    color: white;
+}
+
+.player-card-top span {
+    background: #252a36;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    color: #aeb4c2;
+}
+
+.player-cost {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4ade80;
+    margin: 25px 0;
+}
+
+.player-cost small {
+    font-size: 13px;
+    color: #aeb4c2;
+}
+
+.remove-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #dc2626;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background: #ef4444;
+}
+
+.empty-state {
+    text-align: center;
+    color: #aeb4c2;
+}
+
+.dashboard-message {
+    margin-top: 25px;
+    padding: 14px;
+    background: #1e2430;
+    border: 1px solid #303644;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dashboard-footer {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.dashboard-footer p {
+    color: #717887;
+}
+
+.back-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #374151;
+    color: white;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: #4b5563;
+}
+
+@media (max-width: 800px) {
+    .player-content {
+        grid-template-columns: 1fr;
+    }
+
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .purse-box {
+        text-align: left;
+    }
+}
+
+.auction-view-page {
+    min-height: 100vh;
+    background: #0f1117;
+    padding: 40px 20px;
+}
+
+.auction-view-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.auction-view-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auction-view-header h1 {
+    margin-bottom: 8px;
+}
+
+.auction-view-header p {
+    font-size: 20px;
+    color: #aeb4c2;
+}
+
+.auction-watch-card {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 35px;
+    background: #171a22;
+    border: 1px solid #2a2f3a;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.auction-watch-card h2 {
+    margin-bottom: 10px;
+}
+
+.auction-watch-card p {
+    margin-bottom: 25px;
+}
+
+.auction-watch-card input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #3a4050;
+    background: #0f1117;
+    color: white;
+    font-size: 16px;
+}
+
+.auction-watch-card button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.auction-watch-card button:hover {
+    background: #8b5cf6;
+}
+
+.auction-live-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #171a22;
+    border: 1px solid #2a2f3a;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+}
+
+.auction-live-bar span {
+    display: block;
+    color: #717887;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.auction-live-bar strong {
+    color: white;
+    font-size: 18px;
+}
+
+.live-player-card {
+    background: #171a22;
+    border: 1px solid #2a2f3a;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.live-title {
+    color: #8b5cf6;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.live-player-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.live-player-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252a36;
+    border: 1px solid #353b49;
+    border-radius: 50%;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.live-player-main h1 {
+    font-size: 48px;
+    margin: 0 0 15px;
+}
+
+.category-badge {
+    background: #7c3aed;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.live-player-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.live-player-info div {
+    background: #10131a;
+    border: 1px solid #303644;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.live-player-info span {
+    display: block;
+    color: #717887;
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.live-player-info strong {
+    font-size: 20px;
+    color: white;
+}
+
+.available-text {
+    color: #4ade80 !important;
+}
+
+.sold-text {
+    color: #f87171 !important;
+}
+
+.unsold-text {
+    color: #facc15 !important;
+}
+
+.viewer-status {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+}
+
+.viewer-status.sold {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
+
+.viewer-status.unsold {
+    background: rgba(234, 179, 8, 0.1);
+    color: #facc15;
+}
+
+.waiting-auction {
+    padding: 60px 20px;
+}
+
+.waiting-auction div {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.waiting-auction h2 {
+    margin-bottom: 10px;
+}
+
+.viewer-update {
+    text-align: center;
+    color: #717887;
+    margin: 20px 0;
+}
+
+.auction-view-container .back-button {
+    margin: 5px;
+}
+
+@media (max-width: 600px) {
+    .auction-view-page {
+        padding: 25px 15px;
+    }
+
+    .live-player-card {
+        padding: 25px 15px;
+    }
+
+    .live-player-main h1 {
+        font-size: 34px;
+    }
+
+    .live-player-info {
+        grid-template-columns: 1fr;
+    }
+
+    .auction-live-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
