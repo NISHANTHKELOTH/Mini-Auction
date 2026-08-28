@@ -1,8 +1,5 @@
 const express = require("express");
 
-const adminOnly =
-    require("../middleware/adminMiddleware");
-
 const {
     createAuction,
     joinAuction,
@@ -21,12 +18,14 @@ const {
 const protect =
     require("../middleware/authMiddleware");
 
+const adminOnly =
+    require("../middleware/adminMiddleware");
+
 const router = express.Router();
 
 router.post(
     "/create",
     protect,
-    adminOnly,
     createAuction
 );
 
