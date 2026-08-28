@@ -43,16 +43,19 @@ function Welcome() {
 
                 <div className="welcome-actions">
 
-                    {user?.role === "admin" && (
-                        <button
-                            className="welcome-button primary"
-                            onClick={() =>
-                                navigate("/create-auction")
-                            }
-                        >
-                            ➕ Create Auction
-                        </button>
-                    )}
+                    {/* CREATE AUCTION */}
+
+                    <button
+                        className="welcome-button primary"
+                        onClick={() =>
+                            navigate("/create-auction")
+                        }
+                    >
+                        ➕ Create Auction
+                    </button>
+
+
+                    {/* JOIN AUCTION */}
 
                     <button
                         className="welcome-button"
@@ -63,6 +66,9 @@ function Welcome() {
                         🤝 Join Auction
                     </button>
 
+
+                    {/* CAPTAIN DASHBOARD */}
+
                     <button
                         className="welcome-button"
                         onClick={() =>
@@ -71,6 +77,9 @@ function Welcome() {
                     >
                         👨‍✈️ Captain Dashboard
                     </button>
+
+
+                    {/* WATCH AUCTION */}
 
                     <button
                         className="welcome-button"
@@ -81,20 +90,13 @@ function Welcome() {
                         👀 Watch Auction
                     </button>
 
-                    {user?.role === "admin" && (
-                        <button
-                            className="welcome-button"
-                            onClick={() =>
-                                navigate("/admin-dashboard")
-                            }
-                        >
-                            👑 Admin Dashboard
-                        </button>
-                    )}
-
                 </div>
 
+
                 <div className="welcome-divider"></div>
+
+
+                {/* AUCTION HISTORY */}
 
                 <div className="history-section">
 
@@ -117,7 +119,11 @@ function Welcome() {
 
                 </div>
 
+
                 <div className="welcome-divider"></div>
+
+
+                {/* LOGOUT */}
 
                 <button
                     className="logout-button"
